@@ -8,15 +8,18 @@ class Car():
         self.seats = 4
         self.color = kwargs.get("color", "black")
         self.price = kwargs.get("price", "$200")
+        self.open_roof = False
     
 class Convertible(Car):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.open_roof = True
 
-    def openning_roof:
-        print("I can open my roof!")
+    def openning_roof(self):
+        if self.open_roof is True: print("I can open my roof!")
+        else: print("I am stupid")
 
 
 porche = Convertible(color = "Red")
-print(porche.color)
+sorento = Car()
+Convertible.openning_roof(sorento)

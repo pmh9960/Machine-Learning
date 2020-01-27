@@ -1,8 +1,20 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from make_graph import graphf
+import gates
 
-x = np.arange(-1, 2, 0.1)
-y = x*x + 1
+x1 = 0
+x2 = 0
+print(gates.XOR(x1, x2))
 
-graphf(x, y, "y=3x+2")
+x1 = 0
+x2 = 1
+print(gates.XOR(x1, x2))
+
+x1 = 1
+x2 = 0
+print(gates.XOR(x1, x2))
+
+x1 = 1
+x2 = 1
+print(gates.XOR(x1, x2))
