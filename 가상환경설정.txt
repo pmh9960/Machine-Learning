@@ -14,6 +14,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
 4. 필요한 라이브러리 설치
 pip install scipy matplotlib jupyter tensorflow ...
+or c:/Users/Minho/Documents/GitHub/MachineLearning/.venv/Scripts/python.exe -m pip install ...
 
 5. 종료
 deactivate
