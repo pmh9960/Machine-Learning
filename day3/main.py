@@ -47,7 +47,6 @@ W3 = np.array([
 y = np.dot(W3,np.dot(W2,np.dot(W1,x)))
 print(y)
 """
-import numpy as np
 import matplotlib.pyplot as plt
 from functions import softmax
 X = np.array([1, 2, 3])
