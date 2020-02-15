@@ -3,7 +3,7 @@ import sys
 
 sys.path.append(os.pardir)
 import numpy as np
-import pickle
+import pickle  # pickle 사용법 https://wayhome25.github.io/cs/2017/04/04/cs-04/
 from common.functions import sigmoid, softmax
 from data_mnist.mnist import load_mnist
 from PIL import Image
