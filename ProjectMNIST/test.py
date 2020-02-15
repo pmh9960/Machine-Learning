@@ -55,13 +55,31 @@ def predict(network, x):
     return y
 
 
+# W1, W2, W3 = network["W1"], network["W2"], network["W3"]
+# print(x.shape, W1.shape, W2.shape, W3.shape, y.shape)
+# (10000, 784) (784, 50) (50, 100) (100, 10) (10,)
+
+"""
+# 배치(Batch) 처리
+
+IO에 상대적으로 많은 시간 소요
+'메모리가 허용하는 한' 많은 데이터를 '한 번에' 읽어오기.
+
+메모리에 따라서, 데이터에 따라서
+N개를 M번 반복하는 것이 가장 빠름.
+
+"""
+
+
 x, t = get_data()
 network = init_network()
+batch_size = 100
 accuracy_cnt = 0
-for i in range(len(x)):
-    y = predict(network, x[i])
-    p = np.argmax(y)
-    if p == t[i]:
-        accuracy_cnt += 1
+
+for i in range(0, len(x), batch_size):
+    x_batch = x[i : i + batch_size]
+    y_batch = predict(network, x_batch)
+    p = np.argmax(y_batch, axis=1)
+    accuracy_cnt += np.sum(p == t[i : i + batch_size])
 
 print("Accuracy: " + str(float(accuracy_cnt / len(x))))
