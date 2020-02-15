@@ -1,0 +1,5 @@
+python 3.6 64bit (이상 버젼은 버그 있음)
+
+virtualenv
+
+scipy, matplotlib, tensorflow
