@@ -80,6 +80,9 @@ for i in range(0, len(x), batch_size):
     x_batch = x[i : i + batch_size]
     y_batch = predict(network, x_batch)
     p = np.argmax(y_batch, axis=1)
+    # axis=0 : 열 별로 살펴봄
+    # axis=1 : 행 별로 살펴봄
     accuracy_cnt += np.sum(p == t[i : i + batch_size])
 
 print("Accuracy: " + str(float(accuracy_cnt / len(x))))
+
